@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        var key: NSDictionary?
+        if let path = Bundle.main.path(forResource: "key", ofType: "plist") {
+            key = NSDictionary(contentsOfFile: path)
+        }
+        if let dict = key {
+            let apiKey = dict["apiKey"] as? String
+            
+        }
         
         
         return true

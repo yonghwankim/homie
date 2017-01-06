@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>&quot;위치정보 사용&quot;</string>
+	<string>위치정보 사용</string>
 	<key>CFBundleAllowMixedLocalizations</key>
 	<false/>
 	<key>CFBundleDevelopmentRegion</key>
@@ -28,6 +28,8 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>googleMapAPIKey</key>
+	<string>AIzaSyCkCfFRxkrKwQeIVKDERUlswEi4oA0UsJw</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -38,5 +40,12 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>googlechromes</string>
+		<string>comgooglemaps</string>
+	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allows you to add photos to your meals.</string>
 </dict>
 </plist>

@@ -9,41 +9,41 @@
 import UIKit
 import MapKit
 import CoreLocation
+import GoogleMaps
 
 class MyMapView: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
+        // googleMaps 사용
+        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6)
+        let gmapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        gmapView.isMyLocationEnabled = true
+        self.view = gmapView
+        
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2DMake(-33.86, 151.20)
+        marker.title = "Sydney"
+        marker.snippet = "Australia"
+        marker.map = gmapView
+    }
+    
+    
+    
+    
+    
+    
+    
+    // MapKit 사용
     @IBOutlet var mapView: MKMapView!
     
     @IBAction func findMe(_ sender: Any) {
-
         mapView.setCenter(mapView.userLocation.coordinate, animated: true)
-        
-        
-        // 시청 위도경도
-        /*
-        var region = MKCoordinateRegion()
-        var span = MKCoordinateSpan()
-        
-        span.latitudeDelta = 0.00005
-        span.longitudeDelta = 0.00005
-        
-        region.center = CLLocationCoordinate2DMake(37.564123, 126.974702)
-        region.span = span
-        
-        mapView.setRegion(region, animated: true)
-        mapView.setCenter(region.center, animated: true)
-        mapView.regionThatFits(region)
- */
-        
     }
     
     
     // unwind segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segue_map" {
-            if let destination = segue.destination as? ListViewController {
-                
-            }
-        }
     }
 }

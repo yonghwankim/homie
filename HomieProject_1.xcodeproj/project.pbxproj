@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB8B3EF3BDE6555BFCE398C2 /* libPods-HomieProject_1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2F82D6C0B9D7140020557CB /* libPods-HomieProject_1.a */; };
 		E138364C1E07ADE0006583F8 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138364B1E07ADE0006583F8 /* ListViewController.swift */; };
 		E138364E1E07B3FB006583F8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138364D1E07B3FB006583F8 /* DetailViewController.swift */; };
 		E149B4D11E10EEAC0021F390 /* MyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E149B4D01E10EEAC0021F390 /* MyMapView.swift */; };
 		E149B4D61E1109850021F390 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E149B4D51E1109850021F390 /* MapKit.framework */; };
-		E19B73EB1E10D86C00BBDCB3 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19B73EA1E10D86C00BBDCB3 /* DataCenter.swift */; };
+		E16B73861E1CE6240066E576 /* swift.png in Resources */ = {isa = PBXBuildFile; fileRef = E16B73851E1CE6240066E576 /* swift.png */; };
+		E16B73891E1CE65D0066E576 /* defaultPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = E16B73871E1CE65D0066E576 /* defaultPhoto.png */; };
+		E16B738A1E1CE65D0066E576 /* meal1.png in Resources */ = {isa = PBXBuildFile; fileRef = E16B73881E1CE65D0066E576 /* meal1.png */; };
+		E16B738C1E1E27910066E576 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16B738B1E1E27910066E576 /* RatingControl.swift */; };
+		E16B738E1E1E29B90066E576 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16B738D1E1E29B90066E576 /* Meal.swift */; };
+		E16B73901E1E2F1A0066E576 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16B738F1E1E2F1A0066E576 /* MealTableViewCell.swift */; };
+		E16B73921E1E3B700066E576 /* ExampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16B73911E1E3B700066E576 /* ExampleTableViewController.swift */; };
 		E1A27C8F1DC04A57003AA7B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A27C8E1DC04A57003AA7B7 /* AppDelegate.swift */; };
 		E1A27C941DC04A57003AA7B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A27C921DC04A57003AA7B7 /* Main.storyboard */; };
 		E1A27C961DC04A57003AA7B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1A27C951DC04A57003AA7B7 /* Assets.xcassets */; };
@@ -23,11 +30,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		828682D2CF4F6A487759C67C /* Pods-HomieProject_1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomieProject_1.release.xcconfig"; path = "Pods/Target Support Files/Pods-HomieProject_1/Pods-HomieProject_1.release.xcconfig"; sourceTree = "<group>"; };
+		C2F82D6C0B9D7140020557CB /* libPods-HomieProject_1.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HomieProject_1.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1798B0228D4C47DCC316AEB /* Pods-HomieProject_1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomieProject_1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomieProject_1/Pods-HomieProject_1.debug.xcconfig"; sourceTree = "<group>"; };
 		E138364B1E07ADE0006583F8 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		E138364D1E07B3FB006583F8 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E149B4D01E10EEAC0021F390 /* MyMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMapView.swift; sourceTree = "<group>"; };
 		E149B4D51E1109850021F390 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		E19B73EA1E10D86C00BBDCB3 /* DataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
+		E16B73851E1CE6240066E576 /* swift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swift.png; sourceTree = "<group>"; };
+		E16B73871E1CE65D0066E576 /* defaultPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultPhoto.png; sourceTree = "<group>"; };
+		E16B73881E1CE65D0066E576 /* meal1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meal1.png; sourceTree = "<group>"; };
+		E16B738B1E1E27910066E576 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		E16B738D1E1E29B90066E576 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		E16B738F1E1E2F1A0066E576 /* MealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
+		E16B73911E1E3B700066E576 /* ExampleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTableViewController.swift; sourceTree = "<group>"; };
 		E1A27C8B1DC04A57003AA7B7 /* HomieProject_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomieProject_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A27C8E1DC04A57003AA7B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1A27C931DC04A57003AA7B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -46,17 +62,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				E149B4D61E1109850021F390 /* MapKit.framework in Frameworks */,
+				DB8B3EF3BDE6555BFCE398C2 /* libPods-HomieProject_1.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6180AB90C4636C41C708E641 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D1798B0228D4C47DCC316AEB /* Pods-HomieProject_1.debug.xcconfig */,
+				828682D2CF4F6A487759C67C /* Pods-HomieProject_1.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E138364A1E07AB4D006583F8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				E1A27CA81DC04B36003AA7B7 /* Images */,
 				E1A27C951DC04A57003AA7B7 /* Assets.xcassets */,
+				E16B73911E1E3B700066E576 /* ExampleTableViewController.swift */,
 				E1A27C971DC04A57003AA7B7 /* LaunchScreen.storyboard */,
 				E1A27C9A1DC04A57003AA7B7 /* Info.plist */,
 			);
@@ -67,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				E149B4D51E1109850021F390 /* MapKit.framework */,
+				C2F82D6C0B9D7140020557CB /* libPods-HomieProject_1.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -77,6 +105,7 @@
 				E1A27C8D1DC04A57003AA7B7 /* HomieProject_1 */,
 				E1A27C8C1DC04A57003AA7B7 /* Products */,
 				E149B4D41E1109850021F390 /* Frameworks */,
+				6180AB90C4636C41C708E641 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,9 +121,11 @@
 			isa = PBXGroup;
 			children = (
 				E1A27C8E1DC04A57003AA7B7 /* AppDelegate.swift */,
-				E19B73EA1E10D86C00BBDCB3 /* DataCenter.swift */,
 				E138364B1E07ADE0006583F8 /* ListViewController.swift */,
 				E138364D1E07B3FB006583F8 /* DetailViewController.swift */,
+				E16B738B1E1E27910066E576 /* RatingControl.swift */,
+				E16B738D1E1E29B90066E576 /* Meal.swift */,
+				E16B738F1E1E2F1A0066E576 /* MealTableViewCell.swift */,
 				E1A27C921DC04A57003AA7B7 /* Main.storyboard */,
 				E149B4D01E10EEAC0021F390 /* MyMapView.swift */,
 				E138364A1E07AB4D006583F8 /* Resources */,
@@ -105,8 +136,11 @@
 		E1A27CA81DC04B36003AA7B7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E16B73881E1CE65D0066E576 /* meal1.png */,
+				E16B73851E1CE6240066E576 /* swift.png */,
 				E1A27CA01DC04B30003AA7B7 /* cloud_bg_full.png */,
 				E1A27CA11DC04B30003AA7B7 /* rain_bg_full.png */,
+				E16B73871E1CE65D0066E576 /* defaultPhoto.png */,
 				E1A27CA21DC04B30003AA7B7 /* snow_bg_full.png */,
 				E1A27CA31DC04B30003AA7B7 /* sun_bg_full.png */,
 			);
@@ -120,9 +154,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1A27C9D1DC04A57003AA7B7 /* Build configuration list for PBXNativeTarget "HomieProject_1" */;
 			buildPhases = (
+				9D7D83FF8312B88DCA7E4C57 /* [CP] Check Pods Manifest.lock */,
 				E1A27C871DC04A57003AA7B7 /* Sources */,
 				E1A27C881DC04A57003AA7B7 /* Frameworks */,
 				E1A27C891DC04A57003AA7B7 /* Resources */,
+				45F5C9BFC7F5573D0EBDF8BA /* [CP] Embed Pods Frameworks */,
+				C1A57201EDAB497DBD60B428 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,9 +216,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1A27C991DC04A57003AA7B7 /* LaunchScreen.storyboard in Resources */,
+				E16B73861E1CE6240066E576 /* swift.png in Resources */,
 				E1A27CA41DC04B30003AA7B7 /* cloud_bg_full.png in Resources */,
 				E1A27CA71DC04B30003AA7B7 /* sun_bg_full.png in Resources */,
+				E16B73891E1CE65D0066E576 /* defaultPhoto.png in Resources */,
 				E1A27CA61DC04B30003AA7B7 /* snow_bg_full.png in Resources */,
+				E16B738A1E1CE65D0066E576 /* meal1.png in Resources */,
 				E1A27CA51DC04B30003AA7B7 /* rain_bg_full.png in Resources */,
 				E1A27C961DC04A57003AA7B7 /* Assets.xcassets in Resources */,
 				E1A27C941DC04A57003AA7B7 /* Main.storyboard in Resources */,
@@ -190,6 +230,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		45F5C9BFC7F5573D0EBDF8BA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HomieProject_1/Pods-HomieProject_1-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D7D83FF8312B88DCA7E4C57 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C1A57201EDAB497DBD60B428 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HomieProject_1/Pods-HomieProject_1-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E1A27C871DC04A57003AA7B7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -197,8 +285,11 @@
 			files = (
 				E138364E1E07B3FB006583F8 /* DetailViewController.swift in Sources */,
 				E138364C1E07ADE0006583F8 /* ListViewController.swift in Sources */,
+				E16B73901E1E2F1A0066E576 /* MealTableViewCell.swift in Sources */,
 				E149B4D11E10EEAC0021F390 /* MyMapView.swift in Sources */,
-				E19B73EB1E10D86C00BBDCB3 /* DataCenter.swift in Sources */,
+				E16B73921E1E3B700066E576 /* ExampleTableViewController.swift in Sources */,
+				E16B738C1E1E27910066E576 /* RatingControl.swift in Sources */,
+				E16B738E1E1E29B90066E576 /* Meal.swift in Sources */,
 				E1A27C8F1DC04A57003AA7B7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +411,7 @@
 		};
 		E1A27C9E1DC04A57003AA7B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1798B0228D4C47DCC316AEB /* Pods-HomieProject_1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2S2GLU99NP;
@@ -333,6 +425,7 @@
 		};
 		E1A27C9F1DC04A57003AA7B7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 828682D2CF4F6A487759C67C /* Pods-HomieProject_1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2S2GLU99NP;
