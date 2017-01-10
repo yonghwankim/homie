@@ -60,6 +60,7 @@
                                         <connections>
                                             <outlet property="nameLabel" destination="NQt-iz-Vgj" id="IlS-7D-VXE"/>
                                             <outlet property="photoImageView" destination="YDl-wM-NXj" id="3AT-30-fqA"/>
+                                            <segue destination="mBq-If-tAk" kind="show" identifier="showDetail" id="R5X-hZ-hFi"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -91,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="1443.75" y="-380.28169014084506"/>
         </scene>
-        <!--New Meal-->
+        <!--Detail View Controller-->
         <scene sceneID="DiR-mL-bQY">
             <objects>
-                <viewController id="mBq-If-tAk" customClass="DetialViewController" customModule="HomieProject_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mBq-If-tAk" customClass="DetailViewController" customModule="HomieProject_1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qDL-b6-HS6"/>
                         <viewControllerLayoutGuide type="bottom" id="fIY-o6-qlc"/>
@@ -103,10 +104,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MLP-d6-U0b">
-                                <rect key="frame" x="36" y="20" width="248" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WLF-Hj-viT">
                                 <rect key="frame" x="36" y="80" width="248" height="68"/>
                                 <subviews>
@@ -129,7 +126,7 @@
                                     <constraint firstItem="QNC-QV-ThT" firstAttribute="leading" secondItem="WLF-Hj-viT" secondAttribute="leading" id="s8M-MO-5Se"/>
                                 </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="NtM-Gc-HHd">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="NtM-Gc-HHd">
                                 <rect key="frame" x="10" y="158" width="300" height="300"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -137,7 +134,7 @@
                                     <constraint firstAttribute="height" constant="300" id="w3X-Q5-ThC"/>
                                 </constraints>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="6EP-lM-F4l" appends="YES" id="rUk-6L-RUo"/>
+                                    <outletCollection property="gestureRecognizers" destination="VNU-MU-XHV" appends="YES" id="S0e-28-AnE"/>
                                 </connections>
                             </imageView>
                         </subviews>
@@ -151,9 +148,17 @@
                             <constraint firstItem="WLF-Hj-viT" firstAttribute="centerX" secondItem="ms8-Sl-Fo7" secondAttribute="centerX" id="ypR-16-bRY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="New Meal" id="3xF-ic-oA6">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9hx-F4-cBd"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="gRx-7o-cHS"/>
+                    <navigationItem key="navigationItem" id="3xF-ic-oA6">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9hx-F4-cBd">
+                            <connections>
+                                <action selector="cancelButton:" destination="mBq-If-tAk" id="HwZ-iY-Inw"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="gRx-7o-cHS">
+                            <connections>
+                                <segue destination="TqR-sc-nNY" kind="unwind" unwindAction="unwindToMealListWithSender:" id="ahQ-Qw-TqK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="nameTextField" destination="QNC-QV-ThT" id="nCn-Qq-Put"/>
@@ -162,13 +167,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6c-BP-sZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="6EP-lM-F4l">
+                <exit id="TqR-sc-nNY" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="VNU-MU-XHV">
                     <connections>
-                        <action selector="selectImageFromPhotoLibrary:" destination="mBq-If-tAk" id="cnr-t7-bFX"/>
+                        <action selector="selectImageFromPhotoLibrary:" destination="mBq-If-tAk" id="Q6M-ZO-rjI"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3291" y="-381"/>
+            <point key="canvasLocation" x="3026" y="-381"/>
         </scene>
         <!--My Map View-->
         <scene sceneID="4C5-6B-a9G">
@@ -254,10 +260,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Muf-q5-JJA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2516" y="-381"/>
+            <point key="canvasLocation" x="2248" y="-6"/>
         </scene>
     </scenes>
     <resources>
         <image name="defaultPhoto" width="540" height="540"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="R5X-hZ-hFi"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -7,18 +7,44 @@
 //
 
 import UIKit
+import os.log
 
-class DetialViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // Mark: Properties
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
+    @IBAction func cancelButton(_ sender: UIBarButtonItem) {
+        
+        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        
+        if isPresentingInAddMealMode {
+            dismiss(animated: true, completion: nil)
+        } else if let owningNavigationController = navigationController{
+            owningNavigationController.popViewController(animated: true)
+        } else {
+            fatalError("error")
+        }
+        
+    }
+    
+    // ListViewController 로 보낼 data
+    var meal: Meal?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         nameTextField.delegate = self
+        
+        if let meal = meal {
+            navigationItem.title = meal.name
+            nameTextField.text = meal.name
+            photoImageView.image = meal.photo
+        }
+        
+        updateSaveButtonState()
     }
     
     
@@ -29,11 +55,41 @@ class DetialViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         return true
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        saveButton.isEnabled = false
+    }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         nameTextField.resignFirstResponder()
+        updateSaveButtonState()
+        navigationItem.title = nameTextField.text
     }
     
     
+    // Mark: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        guard let button = sender as? UIButton, button === saveButton else {
+            if #available(iOS 10.0, *) {
+                os_log("The save button was not pressed", log: OSLog.default, type: .debug)
+            } else {
+                // Fallback on earlier versions
+            }
+            return
+        }
+        let name = nameTextField.text ?? ""
+        let photo = photoImageView.image
+        
+        meal = Meal(name: name, photo: photo)
+    }
+    
+    
+    // Mark: Private Methods
+    func updateSaveButtonState() {
+        let text = nameTextField.text ?? ""
+        saveButton.isEnabled = !text.isEmpty
+    }
     
     // Mark: Action
     

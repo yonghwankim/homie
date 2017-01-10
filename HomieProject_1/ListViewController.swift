@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
-
+import os.log
 
 class ListViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverControllerDelegate {
     
@@ -28,12 +28,72 @@ class ListViewController : UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadSampleMeals()
-        
         self.navigationController?.isNavigationBarHidden = false
+        navigationItem.leftBarButtonItem = editButtonItem
+        
+        if let savedMeals = loadMeals() {
+            meals += savedMeals
+        } else {
+            loadSampleMeals()
+        }
+        
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    
+    // Mark: Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        switch (segue.identifier ?? "") {
+        case "AddItem" :
+            if #available(iOS 10.0, *) {
+                os_log("add a new meal", log: OSLog.default, type: .debug)
+            } else {
+                // Fallback on earlier versions
+            }
+            
+        case "showDetail" :
+            guard let mealDetailViewController = segue.destination as? DetailViewController else {
+                fatalError("error")
+            }
+            
+            guard let selectedMealCell = sender as? MealTableViewCell else {
+                fatalError("error")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedMealCell) else {
+                fatalError("error")
+            }
+            let selectedMeal = meals[indexPath.row]
+            
+        default:
+            fatalError("you choose non-exist segue")
+        }
+    }
+    
+    
+    // Mark: Actions
+    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+        
+        if let sourceViewController = sender as? DetailViewController, let meal = sourceViewController.meal {
+            
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                
+                meals[selectedIndexPath.row] = meal
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+                
+            } else {
+                // add a new meal
+                let newIndexPath = IndexPath(row: meals.count, section: 0)
+                meals.append(meal)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+            saveMeals()
+        }
+    }
+    
     
     
     // Mark: Private methods
@@ -57,15 +117,19 @@ class ListViewController : UIViewController, UITableViewDelegate, UITableViewDat
         meals += [meal1, meal2, meal3]
     }
     
-    
-    // Mark: Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
+    private func saveMeals() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: Meal.archiveURL.path)
         
-//        let button = sender as? UIBarButtonItem, button === 
+        if isSuccessfulSave {
+            print("successfully saved")
+        } else {
+            print("failed to save")
+        }
     }
     
+    private func loadMeals() -> [Meal]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Meal.archiveURL.path) as? [Meal]
+    }
     
     
     
@@ -103,15 +167,32 @@ class ListViewController : UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        if let vc = storyboard?.instantiateViewController(withIdentifier: "detail") as? DetialViewController {
-//            vc.textView.text = self.text[indexPath.row]
-//            self.navigationController?.pushViewController(vc, animated: true)
-//        }
+        //        if let vc = storyboard?.instantiateViewController(withIdentifier: "detail") as? DetialViewController {
+        //            vc.textView.text = self.text[indexPath.row]
+        //            self.navigationController?.pushViewController(vc, animated: true)
+        //        }
     }
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90.0
+    }
+    
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            meals.remove(at: indexPath.row)
+            saveMeals()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            
+        }
     }
     
 }
